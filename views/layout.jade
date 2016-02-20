@@ -1,0 +1,32 @@
+doctype html
+html(ng-app="app")
+    head
+    title= title
+    link(rel="stylesheet", href="vendor/bootstrap/dist/css/bootstrap.min.css")
+    link(rel="stylesheet", href="css/helpers.css")
+
+
+body
+    .navbar.navbar-default.navbar-inverse
+        .container-fluid
+            .navbar-header
+                button.navbar-toggle.collapsed(type="button", ng-init="navCollapsed=true", ng-click="navCollapsed=!navCollapsed")
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand To Do's App
+            .collapse.navbar-collapse(uib-collapse="navCollapsed")
+                ul.nav.navbar-nav.navbar-right
+                    li
+                        a(href="#") All Tasks
+
+
+    div.container(ng-view)
+
+
+
+    script(type="text/javascript" src="vendor/jquery/dist/jquery.js")
+    script(type="text/javascript" src="vendor/angular/angular.min.js")
+    script(type="text/javascript" src="vendor/angular-route/angular-route.min.js")
+    script(type="text/javascript" src="vendor/angular-bootstrap/ui-bootstrap.min.js")
+    script(type="text/javascript" src="app/ng-app.js")

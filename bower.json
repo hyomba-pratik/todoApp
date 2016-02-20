@@ -1,0 +1,28 @@
+{
+  "name": "nodeCrud",
+  "description": "",
+  "main": "",
+  "authors": [
+    "nova tasanzol <tsanz0l@yahoo.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [
+    "node"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.0",
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.0",
+    "angular-route": "^1.5.0",
+    "angular-bootstrap": "^1.1.2"
+  }
+}

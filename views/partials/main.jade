@@ -1,0 +1,34 @@
+.container(ng-controller="mainCtrl")
+    .col-sm-6
+        form.form-inline(ng-submit="addTask(taskName)" )
+            .form-group
+                label.mr10 Task Name:
+                input.form-control.mr10(type="text" ng-model="taskName" required)
+            .form-group
+                button.btn.btn-info Add
+    .col-sm-6
+        form.form-inline
+            .form-group.pull-right
+                label.mr10 Search Task:
+                input.form-control.mr10(type="text" ng-model="SearchtaskName" required)
+
+
+    .col-sm-12.mt20
+        table.table.table-responsive.table-hover
+            thead
+                tr
+                    th S/N
+                    th Task Name
+                    th Status
+                    th Action
+            tbody
+                tr(ng-repeat="task in filteredItems = (tasks | filter:SearchtaskName)" )
+                    td {{$index+1}}
+                    td(ng-class="{true: 'textstrikethrough', false: ''}[task.status == 'Completed']") {{task.name}}
+                    td {{task.status}}
+                    td
+                        button.btn.btn-primary.mr10(ng-click="done(task.name)" ng-class="{true: 'hide', false: ''}[task.status == 'Completed']") Done
+                        button.btn.btn-danger(ng-click="delete(task.name)") Delete
+
+
+        <strong ng-show="!filteredItems.length">No Task Available</strong>
